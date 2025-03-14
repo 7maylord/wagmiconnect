@@ -1,8 +1,12 @@
 import { http, createConfig, createStorage } from 'wagmi'
 import { base, mainnet, sepolia, baseSepolia, lisk, liskSepolia } from 'wagmi/chains'
 import { safe, walletConnect } from 'wagmi/connectors'
+import walletlogo from "../assets/walletconnect.jpg"
 
-const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
+
+const projectId = import.meta.env.VITE_APP_WALLETCONNECT_PROJECT_ID
+const projectUrl = import.meta.env.VITE_APP_API_URL
+
 
 export const config = createConfig({
   chains: [ base, mainnet, sepolia, baseSepolia, lisk, liskSepolia ],
@@ -13,10 +17,10 @@ export const config = createConfig({
     walletConnect({
       projectId,
       metadata: {
-        name: 'My Web3 App',
+        name: 'Wagmi Connect',
         description: 'Connect your wallet to interact with the blockchain',
-        url: window.location.origin,
-        icons: [`${window.location.origin}/icon.png`] // Make sure you have an icon at this location
+        url: projectUrl,
+        icons: [walletlogo],
       },
       showQrModal: true,
       relayUrl: 'wss://relay.walletconnect.org'

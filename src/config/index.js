@@ -10,7 +10,17 @@ export const config = createConfig({
   storage: createStorage({ storage: window.localStorage }),
   connectors: [
     // injected(),
-    walletConnect({ projectId }),
+    walletConnect({
+      projectId,
+      metadata: {
+        name: 'My Web3 App',
+        description: 'Connect your wallet to interact with the blockchain',
+        url: window.location.origin,
+        icons: [`${window.location.origin}/icon.png`] // Make sure you have an icon at this location
+      },
+      showQrModal: true,
+      relayUrl: 'wss://relay.walletconnect.org'
+    }),
     safe(),
   ],
   transports: {

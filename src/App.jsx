@@ -5,8 +5,8 @@ import { useAccount } from "wagmi";
 
 function ConnectWalletModal({ onClose }) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 p-4 z-50 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white p-6 rounded-xl shadow-xl w-full max-w-sm text-gray-800 border border-gray-200 animate-slideUp">
+    <div className="fixed inset-0 flex items-center justify-center  bg-opacity-30 p-4 z-50 backdrop-blur-sm animate-fadeIn">
+      <div className="bg-white p-6 bg-opacity-20 backdrop-filter backdrop-blur-2xl rounded-xl shadow-xl w-full max-w-sm text-gray-800 border border-gray-200 animate-slideUp">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">Connect Wallet</h2>
           <button 
